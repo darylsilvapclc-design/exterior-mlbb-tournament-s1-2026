@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EXTERIOR MLBB TOURNAMENT</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+<style id="css">
+:root{color-scheme:dark;box-sizing:border-box;--ink:#f5f5fa;--muted:#9a9ab2;--accent:#ff2e4d;--gold:#ffc83d;--line:rgba(255,46,77,.4);--surface:rgba(10,10,16,.78);--goldbg:rgba(255,200,61,.14);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:#07070c}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;color:var(--ink);font-family:"Chakra Petch",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45;background:
+ linear-gradient(115deg,rgba(255,46,77,.24) 0,rgba(255,46,77,0) 38%),
+ linear-gradient(295deg,rgba(255,200,61,.14) 0,rgba(255,200,61,0) 34%),
+ repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 40px),
+ repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 40px),
+ #07070c;background-attachment:fixed}
+main{max-width:1180px;margin:0 auto;padding:26px 16px 48px}
+h1{margin:0 0 6px;font-size:clamp(1.7rem,4.8vw,2.9rem);font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.05em;padding-left:14px;border-left:6px solid var(--accent);text-shadow:0 0 30px rgba(255,46,77,.5)}
+.sub{color:var(--muted);margin:0 0 26px;padding-left:20px;letter-spacing:.04em;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:40px 22px;margin:34px 0}
+.panel{position:relative;background:linear-gradient(180deg,rgba(22,22,32,.94),rgba(12,12,19,.96));border:1px solid var(--line);box-shadow:inset 0 0 0 4px rgba(7,7,12,.95),inset 0 0 0 5px rgba(255,46,77,.22),0 12px 40px rgba(0,0,0,.5);padding:34px 16px 18px}
+.ptitle{position:absolute;top:-17px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-weight:700;letter-spacing:.16em;padding:6px 30px;white-space:nowrap;box-shadow:0 0 22px rgba(255,46,77,.55);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.tbl{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl th{font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-align:center;padding:6px 4px;border-bottom:2px solid var(--accent)}
+.tbl th:nth-child(2){text-align:left}
+.tbl td{text-align:center;padding:8px 4px;border-bottom:1px solid rgba(255,255,255,.08)}
+.tbl td.tn{text-align:left;font-weight:600}
+.tbl .n,.gs .n{color:#ff5a74;font-weight:700;font-size:.78rem;margin-right:6px}
+.tbl tr.adv td:first-child{box-shadow:inset 4px 0 0 var(--gold)}
+.tbl tr.out td{opacity:.5;color:#ff7a90}
+.small{font-size:.8rem;margin:8px 0 14px}
+.rh{margin:16px 0 8px;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:#ff7a90;font-weight:700}
+.gm{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;gap:6px;margin-bottom:6px}
+.gs{display:flex;align-items:center;gap:4px;min-width:0;width:100%;text-align:left;font:inherit;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid rgba(255,255,255,.12);border-radius:0;padding:8px 9px}
+.gs .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+button.gs{cursor:pointer}
+button.gs:hover{background:rgba(255,46,77,.16)}
+.gs.won{background:var(--goldbg);box-shadow:inset 4px 0 0 var(--gold)}
+.gs.lost{opacity:.42;text-decoration:line-through}
+.vs{align-self:center;font-size:.7rem;color:var(--muted);font-weight:700}
+.scrollx{overflow-x:auto}
+.bk{display:flex;gap:16px;min-width:760px;height:520px}
+.col{flex:1;min-width:150px;display:flex;flex-direction:column}
+.col h2{margin:0 0 8px;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.18em;font-weight:700;text-align:center;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.matches{flex:1;display:flex;flex-direction:column;justify-content:space-around}
+.match{background:var(--surface);border:1px solid rgba(255,255,255,.12);overflow:hidden;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.mh{padding:4px 10px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#ff7a90;background:rgba(255,46,77,.1);border-bottom:1px solid var(--line)}
+.slot{display:flex;align-items:center;gap:8px;width:100%;text-align:left;border:0;border-radius:0;background:transparent;padding:8px 10px;font:inherit;font-weight:600;color:var(--ink)}
+.slot+.slot{border-top:1px solid rgba(255,255,255,.1)}
+.slot .n{width:24px;color:#ff5a74;font-weight:700;font-size:.78rem}
+.slot .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+button.slot{cursor:pointer}
+button.slot:hover{background:rgba(255,46,77,.16)}
+.slot.empty{color:var(--muted);font-weight:400;font-style:italic;font-size:.88rem}
+.slot.won{background:var(--goldbg);box-shadow:inset 4px 0 0 var(--gold)}
+.slot.lost{opacity:.42;text-decoration:line-through}
+.champ{text-align:center;padding:18px 12px;background:linear-gradient(135deg,#ff2e4d,#ffc83d);color:#16060a;box-shadow:0 0 40px rgba(255,46,77,.45);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.champ small{display:block;text-transform:uppercase;letter-spacing:.22em;font-weight:700}
+.champ strong{display:block;font-size:1.35rem;margin-top:4px;overflow-wrap:anywhere}
+.champ.none{background:var(--surface);color:var(--muted);border:1px dashed var(--line);box-shadow:none;font-style:italic}
+details{background:rgba(16,16,24,.92);border:1px solid var(--line);padding:12px 14px;margin-bottom:14px}
+summary{cursor:pointer;font-weight:700;letter-spacing:.04em}
+details h3{margin:16px 0 6px;font-size:.9rem;color:#ff7a90;text-transform:uppercase;letter-spacing:.12em}
+details p,details li{color:#d9d9e8;font-size:.93rem}
+details ul,details ol{margin:6px 0;padding-left:22px}
+.seeds{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin:12px 0}
+.seed{display:flex;align-items:center;gap:8px}
+.seed b{width:28px;text-align:right;color:#ff5a74}
+.seed input{flex:1;min-width:0;font:inherit;color:var(--ink);background:#07070c;border:1px solid var(--line);padding:6px 8px}
+.btns{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+button{font:inherit;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line);padding:7px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:disabled{opacity:.5;cursor:default}
+.seed input:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.note{color:var(--muted);font-size:.88rem;margin:10px 0 0}
+@media (max-width:520px){.ptitle{padding:6px 16px;letter-spacing:.08em;font-size:.82rem;max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="application/json" id="state">{"names":["Team A1","Team A2","Team A3","Team A4","Team A5","Team A6","Team B1","Team B2","Team B3","Team B4","Team B5","Team B6"],"gw":{},"win":{}}</script>
+<script id="app">
+var state = JSON.parse(document.getElementById('state').textContent);
+var names = state.names, gw = state.gw || {}, win = state.win || {};
+var editable = false, WIN_PTS = 2;
+var RULES =
+  '<h3>I. Tournament Overview</h3><p>The Mobile Legends: Bang Bang tournament promotes teamwork, strategic thinking, sportsmanship and friendly competition. 12 teams are divided into Bracket A and Bracket B, six teams each. Every team plays the other five teams in its bracket in a Best of One (BO1) format. The two teams with the lowest points in each bracket are eliminated.</p>' +
+  '<h3>II. Registration Guidelines</h3><ol><li>Each team must have exactly five (5) registered players.</li><li>Each player must pay an entrance fee of ₱100.</li><li>Each team must designate one team captain.</li><li>Players must submit their complete names, MLBB usernames, User IDs and Zone IDs.</li><li>Only registered players are allowed to participate.</li><li>A player may only represent one team.</li><li>All registration fees must be settled before the tournament begins.</li></ol>' +
+  '<h3>III. Format and Match Rules</h3><ol><li>Each bracket has six participating teams.</li><li>Each team plays the other five teams in its bracket.</li><li>All preliminary matches are Best of One (BO1): one game only.</li><li>The team that destroys the opposing base first wins.</li><li>Teams accumulate points based on their match results.</li><li>The two teams with the lowest points in each bracket are eliminated.</li><li>The remaining four teams from each bracket advance to the playoffs.</li></ol>' +
+  '<h3>IV. Points System</h3><ul><li>Win: 2 points</li><li>Loss: 0 points</li></ul><p>Ties in points are broken by the head-to-head result.</p>' +
+  '<h3>V. Playoffs</h3><p>The eight qualified teams play a single-elimination bracket, all matches BO3.</p><ul><li>QF 1: Bracket A Rank 1 vs Bracket B Rank 4</li><li>QF 2: Bracket B Rank 2 vs Bracket A Rank 3</li><li>QF 3: Bracket B Rank 1 vs Bracket A Rank 4</li><li>QF 4: Bracket A Rank 2 vs Bracket B Rank 3</li></ul>';
+
+function lab(t){ return t <= 6 ? 'A' + t : 'B' + (t - 6); }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+/* group stage: round robin, 5 rounds x 3 matches per bracket */
+var G = [];
+['A', 'B'].forEach(function(b, k){
+  var t = [1, 2, 3, 4, 5, 6];
+  for (var r = 0; r < 5; r++){
+    for (var i = 0; i < 3; i++) G.push({id: b + '-' + (r+1) + '-' + (i+1), b: b, r: r, t1: t[i] + k*6, t2: t[5-i] + k*6});
+    t.splice(1, 0, t.pop());
+  }
+});
+function complete(b){ return G.every(function(m){ return m.b !== b || gw[m.id]; }); }
+function h2h(a, c){
+  for (var i = 0; i < G.length; i++){
+    var m = G[i], w = gw[m.id];
+    if (w && ((m.t1 === a && m.t2 === c) || (m.t1 === c && m.t2 === a))) return w === a ? -1 : 1;
+  }
+  return 0;
+}
+function standings(b){
+  var o = b === 'A' ? 0 : 6, rows = [], by = {};
+  for (var i = 1; i <= 6; i++){ var r = {t: o+i, w: 0, l: 0}; rows.push(r); by[o+i] = r; }
+  G.forEach(function(m){
+    var w = gw[m.id]; if (m.b !== b || !w) return;
+    by[w].w++; by[w === m.t1 ? m.t2 : m.t1].l++;
+  });
+  rows.sort(function(x, y){
+    if (y.w !== x.w) return y.w - x.w;
+    return h2h(x.t, y.t) || (x.t - y.t);
+  });
+  return rows;
+}
+
+/* playoffs: 8-team single elimination */
+var PM = [
+  {id:'Q1', r:0, l:'Quarterfinal 1', x:{k:'A', n:1}, y:{k:'B', n:4}},
+  {id:'Q2', r:0, l:'Quarterfinal 2', x:{k:'B', n:2}, y:{k:'A', n:3}},
+  {id:'Q3', r:0, l:'Quarterfinal 3', x:{k:'B', n:1}, y:{k:'A', n:4}},
+  {id:'Q4', r:0, l:'Quarterfinal 4', x:{k:'A', n:2}, y:{k:'B', n:3}},
+  {id:'S1', r:1, l:'Semifinal 1', x:{f:'Q1'}, y:{f:'Q2'}},
+  {id:'S2', r:1, l:'Semifinal 2', x:{f:'Q3'}, y:{f:'Q4'}},
+  {id:'F', r:2, l:'Grand Finals', x:{f:'S1'}, y:{f:'S2'}}
+];
+var PCOLS = ['Quarterfinals', 'Semifinals', 'Grand Finals'];
+function res(p){
+  if (p.f) return win[p.f] || null;
+  return complete(p.k) ? standings(p.k)[p.n - 1].t : null;
+}
+function clean(){
+  PM.forEach(function(m){
+    var a = res(m.x), b = res(m.y), w = win[m.id];
+    if (w && w !== a && w !== b) delete win[m.id];
+  });
+}
+function pslot(m, side){
+  var p = m[side], s = res(p), w = win[m.id];
+  if (!s) return '<div class="slot empty"><span class="n"></span><span class="t">' + (p.k ? 'Bracket ' + p.k + ' · Rank ' + p.n : 'Waiting') + '</span></div>';
+  var both = res(m.x) && res(m.y);
+  var cls = 'slot' + (w === s ? ' won' : '') + (w && w !== s ? ' lost' : '');
+  var inner = '<span class="n">' + lab(s) + '</span><span class="t">' + esc(names[s-1]) + '</span>';
+  if (editable && both) return '<button type="button" class="' + cls + '" data-m="' + m.id + '" data-s="' + s + '">' + inner + '</button>';
+  return '<div class="' + cls + '">' + inner + '</div>';
+}
+function pcard(m){
+  return '<div class="match"><div class="mh">' + m.l + ' · BO3</div>' + pslot(m, 'x') + pslot(m, 'y') + '</div>';
+}
+
+function gm(m){
+  var w = gw[m.id];
+  function s(t){
+    var cls = 'gs' + (w === t ? ' won' : '') + (w && w !== t ? ' lost' : '');
+    var inner = '<span class="n">' + lab(t) + '</span><span class="t">' + esc(names[t-1]) + '</span>';
+    return editable ? '<button type="button" class="' + cls + '" data-g="' + m.id + '" data-s="' + t + '">' + inner + '</button>'
+                    : '<div class="' + cls + '">' + inner + '</div>';
+  }
+  return '<div class="gm">' + s(m.t1) + '<span class="vs">VS</span>' + s(m.t2) + '</div>';
+}
+function gpanel(b){
+  var st = standings(b), done = complete(b);
+  var h = '<section class="panel"><div class="ptitle">BRACKET ' + b + '</div>' +
+    '<table class="tbl"><thead><tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>Pts</th></tr></thead><tbody>';
+  st.forEach(function(r, i){
+    h += '<tr class="' + (i < 4 ? 'adv' : (done ? 'out' : '')) + '"><td>' + (i+1) + '</td><td class="tn"><span class="n">' + lab(r.t) + '</span>' + esc(names[r.t-1]) + '</td><td>' + r.w + '</td><td>' + r.l + '</td><td><b>' + (r.w * WIN_PTS) + '</b></td></tr>';
+  });
+  h += '</tbody></table><p class="note small">Top 4 advance to the playoffs. The bottom 2 are eliminated.</p>';
+  for (var r = 0; r < 5; r++){
+    h += '<div class="rh">Round ' + (r+1) + ' · BO1</div>';
+    G.filter(function(m){ return m.b === b && m.r === r; }).forEach(function(m){ h += gm(m); });
+  }
+  return h + '</section>';
+}
+function render(){
+  clean();
+  document.getElementById('groups').innerHTML = gpanel('A') + gpanel('B');
+  var h = '<section class="panel"><div class="ptitle">PLAYOFFS · SINGLE ELIMINATION</div><div class="scrollx"><div class="bk">';
+  [0, 1, 2].forEach(function(r){
+    h += '<div class="col"><h2>' + PCOLS[r] + '</h2><div class="matches">';
+    PM.filter(function(m){ return m.r === r; }).forEach(function(m){ h += pcard(m); });
+    h += '</div></div>';
+  });
+  var c = win['F'];
+  h += '<div class="col" style="flex:.8;min-width:140px"><h2>Champion</h2><div class="matches">' +
+    (c ? '<div class="champ"><small>Champion</small><strong>' + esc(names[c-1]) + '</strong></div>' : '<div class="champ none">No champion yet</div>') +
+    '</div></div></div></div></section>';
+  document.getElementById('po').innerHTML = h;
+}
+function msg(t){ var e = document.getElementById('msg'); if (e) e.textContent = t; }
+function setDirty(){
+  var b = document.getElementById('pub');
+  if (b) b.disabled = false;
+  msg('Changes are only on this screen until you upload the new file.');
+}
+
+document.getElementById('root').innerHTML =
+  '<main><h1>EXTERIOR MLBB TOURNAMENT</h1>' +
+  '<p class="sub">12 teams · Bracket A and Bracket B · round robin (BO1) · top 4 of each bracket advance to single-elimination playoffs</p>' +
+  '<details><summary>Tournament rules and format</summary>' + RULES + '</details>' +
+  '<div id="admin"></div><div class="grid" id="groups"></div><div id="po"></div>' +
+  '<p class="note" id="orgwrap" style="margin-top:26px"><button type="button" id="org">Organizer</button></p></main>';
+
+document.getElementById('root').addEventListener('click', function(e){
+  var g = e.target.closest('button.gs'), s = e.target.closest('button.slot');
+  if (!editable) return;
+  if (g){
+    var gid = g.getAttribute('data-g'), gt = +g.getAttribute('data-s');
+    if (gw[gid] === gt) delete gw[gid]; else gw[gid] = gt;
+  } else if (s){
+    var id = s.getAttribute('data-m'), t = +s.getAttribute('data-s');
+    if (win[id] === t) delete win[id]; else win[id] = t;
+  } else return;
+  setDirty(); render();
+});
+
+function clearAll(){
+  Object.keys(gw).forEach(function(k){ delete gw[k]; });
+  Object.keys(win).forEach(function(k){ delete win[k]; });
+}
+function buildAdmin(){
+  var h = '<details open><summary>Organizer controls</summary>' +
+    '<p class="note">Type each team name below. Click the winner of each match to record the result. Changes show only on this screen until you download the updated file and upload it to your site.</p><div class="seeds">';
+  names.forEach(function(n, i){
+    h += '<label class="seed"><b>' + lab(i+1) + '</b><input type="text" maxlength="24" data-i="' + i + '" value="' + esc(n) + '" aria-label="Team ' + lab(i+1) + '"></label>';
+  });
+  h += '</div><div class="btns"><button type="button" id="pub" class="primary" disabled>Download updated file</button>' +
+    '<button type="button" id="shuffle">Shuffle teams</button>' +
+    '<button type="button" id="reset">Reset all results</button><span class="note" id="msg"></span></div></details>';
+  var a = document.getElementById('admin');
+  a.innerHTML = h;
+  a.addEventListener('input', function(e){
+    var i = e.target.getAttribute('data-i');
+    if (i === null) return;
+    names[+i] = e.target.value || ('Team ' + lab(+i + 1));
+    setDirty(); render();
+  });
+  document.getElementById('reset').addEventListener('click', function(){ clearAll(); setDirty(); render(); });
+  document.getElementById('shuffle').addEventListener('click', function(){
+    for (var i = names.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = names[i]; names[i] = names[j]; names[j] = t;
+    }
+    clearAll(); buildAdmin(); setDirty(); render();
+  });
+  document.getElementById('pub').addEventListener('click', download);
+}
+function doc(){
+  var st = JSON.stringify({names: names, gw: gw, win: win}).replace(/</g, '\\u003c');
+  var S = '<scr' + 'ipt', E = '</scr' + 'ipt>';
+  return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n' +
+    '<title>EXTERIOR MLBB TOURNAMENT</title>\n' +
+    '<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">\n' +
+    '<style id="css">' + document.getElementById('css').textContent + '</style>\n</head>\n<body>\n<div id="root"></div>\n' +
+    S + ' type="application/json" id="state">' + st + E + '\n' +
+    S + ' id="app">' + document.getElementById('app').textContent + E + '\n</body>\n</html>';
+}
+function download(){
+  var blob = new Blob([doc()], {type: 'text/html'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'index.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  msg('Downloaded index.html. Upload it to your site to update the page.');
+}
+document.getElementById('org').addEventListener('click', function(){
+  editable = true;
+  document.getElementById('orgwrap').remove();
+  buildAdmin(); render();
+});
+render();
+</script>
+</body>
+</html>
